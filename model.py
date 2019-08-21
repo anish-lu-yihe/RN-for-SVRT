@@ -52,7 +52,6 @@ class FCOutputModel(nn.Module):
         return F.log_softmax(x)
 
 
-
 class BasicModel(nn.Module):
     def __init__(self, args, name):
         super(BasicModel, self).__init__()
@@ -76,8 +75,8 @@ class BasicModel(nn.Module):
         accuracy = correct * 100. / len(label)
         return accuracy
 
-    def save_model(self, epoch):
-        torch.save(self.state_dict(), 'model/epoch_{}_{:02d}.pth'.format(self.name, epoch))
+    def save_model(self, problem, epoch):
+        torch.save(self.state_dict(), 'model/problem_{:0>2d}/epoch_{}_{:02d}.pth'.format(problem, self.name, epoch))
 
 
 class RN(BasicModel):

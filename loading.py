@@ -3,7 +3,8 @@ import cv2
 from load_svrt import load_svrt,load_data
 
 
-rel_train, rel_test, norel_train, norel_test = load_svrt()
+rel_train, rel_test = load_svrt()
+print(len(rel_train),len(rel_test))
 img = np.array(rel_train[0][0])
 qst = rel_train[0][1]
 ans = rel_train[0][2]

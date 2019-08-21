@@ -5,13 +5,13 @@ import numpy as np
 import cv2
 import pickle
 
-def load_svrt():
+def load_svrt(problem_no):
     qst = np.zeros(11)
     sample = []
 
-    print('loading data...')
     dirs = './data/svrt/images'
-    prbm = 'problem_01'
+    prbm = 'problem_{:0>2d}'.format(problem_no)
+    print('loading ',prbm)
     for img_index in range(10000):
         if img_index % 1000 < 500:
             ans = 1
@@ -26,12 +26,10 @@ def load_svrt():
         sample.append((img,qst,ans))
 
 
-    rel_train = sample
-    rel_test = sample
-    norel_train = sample
-    norel_test = sample
+    rel_train = sample[:9000]
+    rel_test = sample[9000:]
 
-    return (rel_train, rel_test, norel_train, norel_test)
+    return (rel_train, rel_test)
 
 def load_data():
     print('loading data...')

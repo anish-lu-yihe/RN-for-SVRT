@@ -1,7 +1,8 @@
 #!/bin/bash
 
-python sort_of_clevr_generator.py
-
-python main.py --model=RN      --epochs=20
-
-python main.py --model=CNN_MLP --epochs=100
+for i in `seq 1 23`;
+do
+    echo "------------------------------------"
+    python main.py --model=RN      --epochs=20 --problem "$i"
+    python main.py --model=CNN_MLP --epochs=20 --problem "$i"
+done
