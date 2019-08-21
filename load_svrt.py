@@ -20,6 +20,7 @@ def load_svrt():
         filename = os.path.join(dirs,prbm,'class_{}'.format(ans),'img_{:0>7d}.png'.format(img_index))
 
         img = cv2.imread(filename) / 255
+        img = cv2.resize(img, (75,75), cv2.INTER_LINEAR)
         img = np.swapaxes(img,0,2)
 
         sample.append((img,qst,ans))

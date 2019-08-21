@@ -20,3 +20,7 @@ print("Class labl = ", ans)
 # Word embed =  [1. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0.]
 # Class labl =  2
 ###
+
+img = np.swapaxes(img,0,2)
+cv2.imshow('image',img)
+cv2.waitKey(3000)

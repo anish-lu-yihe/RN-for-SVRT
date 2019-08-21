@@ -15,6 +15,8 @@ from torch.autograd import Variable
 
 from model import RN, CNN_MLP
 
+from load_svrt import load_svrt
+
 
 # Training settings
 parser = argparse.ArgumentParser(description='PyTorch Relational-Network sort-of-CLVR Example')
@@ -158,7 +160,8 @@ def load_data():
     return (rel_train, rel_test, norel_train, norel_test)
 
 
-rel_train, rel_test, norel_train, norel_test = load_data()
+
+rel_train, rel_test, norel_train, norel_test = load_svrt()
 
 try:
     os.makedirs(model_dirs)
