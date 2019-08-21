@@ -12,8 +12,8 @@ def load_svrt():
     print('loading data...')
     dirs = './data/svrt/images'
     prbm = 'problem_01'
-    for img_index in range(100):
-        if img_index < 50:
+    for img_index in range(10000):
+        if img_index % 1000 < 500:
             ans = 1
         else:
             ans = 0
