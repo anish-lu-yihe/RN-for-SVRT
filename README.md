@@ -23,5 +23,9 @@ Currently this branch is a clone from the original code, without any modificatio
 - **null-qst**:
 The original code contains not only an RN but other components; particularly, qst is an input other than the input images, which is obtained by an LSTM from questions. However, the SVRT does not have the component of questions. So before moving this qst entry systematically from the neural network, I have nullified it first by setting all its instantiations to be zero vectors. In this way, the compatibility of the code and the SVRT inputs can be checked, and an initial test of the RN performance on the SVRT can be obtained, which is expected to be not so good.
 
+### Usage
+1. Generate SVRT problems (not included in this project).
+2. Run main.py, or run.sh.
+
 ## Results by **null-qst**
 My machine is currently running for all 23 SVRT problems by the RN.
