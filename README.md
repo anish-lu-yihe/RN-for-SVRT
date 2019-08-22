@@ -8,7 +8,7 @@ The original code for the SVRT generator can be found [here](https://www.idiap.c
 ## Relational Networks (RN)
 An RN was initially published in [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf). It has been shown to be a neural network good at detecting relationships between objects.
 
-The original code of the Pytorch implementation of the RN can be found on [Github](https://github.com/kimhc6028/relational-networks).
+The original code of the Pytorch implementation of the RN can be found [here](https://github.com/kimhc6028/relational-networks).
 
 ### Requirements
 - Python 2.7
@@ -17,11 +17,11 @@ The original code of the Pytorch implementation of the RN can be found on [Githu
 - [opencv](http://opencv.org/)
 
 ### Branches
-- [master](https://github.com/anish-lu-yihe/SVRT-by-RN)
+- [master](https://github.com/anish-lu-yihe/SVRT-by-RN):
 Currently this branch is a clone from the original code, without any modifications.
 
-- **null-qst**
+- **null-qst**:
 The original code contains not only an RN but other components; particularly, qst is an input other than the input images, which is obtained by an LSTM from questions. However, the SVRT does not have the component of questions. So before moving this qst entry systematically from the neural network, I have nullified it first by setting all its instantiations to be zero vectors. In this way, the compatibility of the code and the SVRT inputs can be checked, and an initial test of the RN performance on the SVRT can be obtained, which is expected to be not so good.
 
-### Result
-My machine is running for all 23 SVRT problems by the RN.
+## Results by **null-qst**
+My machine is currently running for all 23 SVRT problems by the RN.
