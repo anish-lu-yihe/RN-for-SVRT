@@ -27,5 +27,9 @@ The original code contains not only an RN but other components; particularly, qs
 1. Generate SVRT problems (not included in this project).
 2. Run main.py, or run.sh.
 
+### Modifications
+- load_svrt.py has been added for loading SVRT images.
+- qst has been nullified.
+
 ## Results by **null-qst**
 My machine is currently running for all 23 SVRT problems by the RN.
