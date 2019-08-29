@@ -32,4 +32,33 @@ The original code contains not only an RN but other components; particularly, qs
 - qst has been nullified.
 
 ## Results by **null-qst**
-My machine is currently running for all 23 SVRT problems by the RN.
+In the original paper (and code), the RN is compared to a multi-layer perceptron (MLP). I have kept the MLP for comparison; it runs much faster than the RN. Here either network was trained on 9k vignettes (half in-class and half out-class) and tested on 1k unseen vignettes. The training and testing processes were repeated 20 times, which led to the following results:
+
+|    | RN      |        | MLP     |        |
+|----|---------|--------|---------|--------|
+| \# | mean    | s.e.   | mean    | s.e.   |
+| 1  | 50\.20% | 0\.27% | 50\.45% | 0\.33% |
+| 2  | 89\.35% | 2\.79% | 91\.85% | 3\.05% |
+| 3  | 67\.40% | 3\.92% | 76\.55% | 3\.84% |
+| 4  | 79\.70% | 1\.88% | 82\.95% | 2\.05% |
+| 5  | 49\.75% | 0\.23% | 48\.45% | 0\.35% |
+| 6  | 67\.05% | 1\.00% | 68\.10% | 0\.93% |
+| 7  | 48\.25% | 0\.26% | 47\.05% | 0\.26% |
+| 8  | 85\.45% | 0\.76% | 84\.85% | 0\.91% |
+| 9  | 49\.20% | 0\.25% | 52\.30% | 0\.39% |
+| 10 | 73\.20% | 1\.69% | 84\.65% | 2\.29% |
+| 11 | 92\.20% | 2\.32% | 90\.70% | 3\.01% |
+| 12 | 48\.50% | 0\.30% | 47\.90% | 0\.28% |
+| 13 | 49\.75% | 0\.28% | 50\.50% | 0\.28% |
+| 14 | 60\.50% | 0\.83% | 54\.45% | 1\.06% |
+| 15 | 52\.25% | 0\.42% | 47\.60% | 0\.31% |
+| 16 | 49\.40% | 0\.48% | 49\.85% | 0\.31% |
+| 17 | 57\.25% | 0\.47% | 64\.45% | 0\.61% |
+| 18 | 71\.80% | 1\.77% | 90\.15% | 1\.88% |
+| 19 | 48\.90% | 0\.32% | 50\.10% | 0\.23% |
+| 20 | 49\.65% | 0\.40% | 49\.25% | 0\.35% |
+| 21 | 49\.65% | 0\.40% | 50\.80% | 0\.30% |
+| 22 | 50\.20% | 0\.29% | 49\.40% | 0\.25% |
+| 23 | 57\.05% | 1\.20% | 56\.35% | 0\.73% |
+
+As expected, the performance of the RN was not good; for many SVRT problems, its performance was at the chance level. The performance of the MLP was not good either, but it outperformed the RN in some problems.
