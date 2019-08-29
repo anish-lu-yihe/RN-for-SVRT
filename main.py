@@ -85,6 +85,7 @@ def cvt_data_axis(data):
 
 
 def train(epoch, rel):
+    print('Trial {}'.format(epoch))
     model.train()
     random.shuffle(rel)
     rel = cvt_data_axis(rel)
@@ -93,9 +94,8 @@ def train(epoch, rel):
         accuracy_rel = model.train_(input_img, input_qst, label)
 
         if batch_idx % args.log_interval == 0:
-            print('Train Epoch: [{:.0f}%] Relations accuracy: {:.0f}%'.format(100. * batch_idx * bs/ len(rel[0]), accuracy_rel))
-
-
+            print('Train: [{:.0f}%] Relations accuracy: {:.0f}%'.format(100. * batch_idx * bs/ len(rel[0]), accuracy_rel))
+            
 
 def test(epoch, rel):
     model.eval()
@@ -106,7 +106,7 @@ def test(epoch, rel):
         accuracy_rels.append(model.test_(input_img, input_qst, label))
 
     accuracy_rel = sum(accuracy_rels) / len(accuracy_rels)
-    print('\n Test set: Relation accuracy: {:.0f}%\n'.format(accuracy_rel))
+    print('\n Trail {}. Test set: Relation accuracy: {:.0f}%\n'.format(epoch, accuracy_rel))
 
 rel_train, rel_test = load_svrt(args.problem)
 
