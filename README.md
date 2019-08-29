@@ -33,5 +33,5 @@ Under development.
 ### Modifications
 Not available.
 
-## Results by **null-qst**
+## Results by **RN-on-image**
 Not available.
